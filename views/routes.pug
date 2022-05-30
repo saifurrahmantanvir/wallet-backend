@@ -1,0 +1,65 @@
+extends base
+
+block routes
+	.routes
+		h2(class="routes__header") Authentication
+		.route
+			div
+				h3(class="route__method") POST
+				a(class="route__url", href="#") https://domain.com/api/users/signup
+			p(class="route__description")
+				| Use this route to create a new account. provide name, accountNo, pin &amp; pinConfirm
+
+		.route
+			div
+				h3(class="route__method") POST
+				a(class="route__url", href="#") https://domain.com/api/users/login
+			p(class="route__description") Use this route to login. provide name &amp; pin
+
+		.route
+			div
+				h3(class="route__method") GET
+				a(class="route__url", href="#") https://domain.com/api/users/logout
+			p(class="route__description")
+				span(class="route__protect") protected
+				| This route handles logout. you
+				| need to be logged in to use this route
+
+		.route
+			div
+				h3(class="route__method") GET
+				a(class="route__url", href="#") https://domain.com/api/users
+			p(class="route__description")
+				span(class="route__protect") protected
+				span(class="route__protect") admin
+				| Use this route to get all the users. only admin can make this
+				| request
+
+		.route
+			div
+				h3(class="route__method") GET
+				a(class="route__url", href="#") https://domain.com/api/users/:id
+			p(class="route__description")
+				span(class="route__protect") protected
+				span(class="route__protect") admin
+				| Use this route to get a single user. only admin can make this
+				| request
+
+	.routes
+		h2(class="routes__header") Movements
+		.route
+			div
+				h3(class="route__method") GET
+				a(class="route__url", href="#") https://domain.com/api/movements/:account
+			p(class="route__description")
+				| Use this route to get all movements for a user. provide the user accountNo
+
+		.route
+			div
+				h3(class="route__method") POST
+				a(class="route__url", href="#") https://domain.com/api/movements/:account
+			p(class="route__description")
+				span(class="route__protect") protected
+				| Use this route to create
+				| movement when requesting for loan and when transferring money between users. provide the user
+				| accountNo
