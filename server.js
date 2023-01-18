@@ -26,6 +26,8 @@ const server = app.listen(PORT, () => {
    console.log(`Server running on port ${PORT}`)
 })
 
+module.exports = app;
+
 process.on('unhandledRejection', (error) => {
    console.log('UnhandledRejection 💥 Shutting Down...')
    console.log(error.name, error.message)
